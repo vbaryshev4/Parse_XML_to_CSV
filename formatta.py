@@ -1,16 +1,3 @@
-'''
-TODO:
-    1) Вытащить заголовки и ссылки статей
-    2) Для каждого </item>, для которого 
-        <category domain="category" nicename="articles”>, 
-        вытащить <title> и <link>. 
-        NB: Всего 636 item
-
-    3) Результат записать в csv в котором есть два столбца: title и link. 
-        Должно получится в районе 167 строк
-
-    4) Сдача: 14 февраля
-'''
 import xml.etree.ElementTree as ET
 import csv
 
