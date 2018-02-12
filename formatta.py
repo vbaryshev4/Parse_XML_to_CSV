@@ -1,7 +1,7 @@
 import xml.etree.ElementTree as ET
 import csv
 
-# Write new line to new CSV
+
 def write_to_csv(row):
     with open('formatta.csv', 'a', newline='') as new_csv:
         w = csv.writer(new_csv)
@@ -20,7 +20,7 @@ def itter(root):
                 if tag.attrib == {'domain': 'category', 'nicename': 'articles'}:
                     count += 1
                     write_to_csv(data)
-    return print('End of parse')
+    return 'End of parse. {0} rows written to CSV'.format(count)
 
 def start_parse(file):
     tree = ET.parse(source_file)
@@ -28,4 +28,4 @@ def start_parse(file):
     return itter(root)
 
 source_file = 'formatta.wordpress.2018-02-11.xml'
-start_parse(source_file)
+print(start_parse(source_file))
